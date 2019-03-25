@@ -45,9 +45,9 @@ LONG_CLASS = datetime.timedelta(minutes=75)
 
 DATE_TO_SCHEDULE = {
     6: ["SaSu"],
-    0: ["MWF", "MW"],
+    0: ["MWF", "MW/WF/MF"],
     1: ["TuTh"],
-    2: ["MWF", "MW"],
+    2: ["MWF", "MW/WF/MF"],
     3: ["TuTh"],
     4: ["MWF"],
     5: ["SaSu"],
@@ -68,13 +68,13 @@ START_END_TIMES = {
         Class("17:45", SHORT_CLASS, "MWF"),
         Class("18:50", SHORT_CLASS, "MWF"),
     ],
-    "MW": [
-        Class("07:35", LONG_CLASS, "MW"),
-        Class("08:40", LONG_CLASS, "MW"),
-        Class("14:30", LONG_CLASS, "MW"),
-        Class("16:00", LONG_CLASS, "MW"),
-        Class("17:30", LONG_CLASS, "MW"),
-        Class("19:00", LONG_CLASS, "MW"),
+    "MW/WF/MF": [
+        Class("07:35", LONG_CLASS, "MW/WF/MF"),
+        Class("08:40", LONG_CLASS, "MW/WF/MF"),
+        Class("14:30", LONG_CLASS, "MW/WF/MF"),
+        Class("16:00", LONG_CLASS, "MW/WF/MF"),
+        Class("17:30", LONG_CLASS, "MW/WF/MF"),
+        Class("19:00", LONG_CLASS, "MW/WF/MF"),
     ],
     "TuTh": [
         Class("08:00", LONG_CLASS, "TuTh"),
