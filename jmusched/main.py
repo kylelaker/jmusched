@@ -20,7 +20,12 @@ from . import classes
     type=click.Choice(tabulate.tabulate_formats),
     default="plain",
 )
-def main(time, format):
+@click.option(
+    "-s", "--simple",
+    is_flag=True,
+    default=False,
+)
+def main(time, format, simple):
     fifteen_minutes = datetime.timedelta(minutes=15)
     classes_now = classes.get_classes(time)
 
@@ -30,16 +35,22 @@ def main(time, format):
     table_data = [[c.start_time(), c.end_time(), c.group] for c in classes_now]
     table_headers = ["Start Time", "End Time", "Meets On"]
 
-    if classes_now:
-        print("Times for classes currently in session")
-        table = tabulate.tabulate(
-            table_data,
-            headers=table_headers,
-            tablefmt=format
-        )
-        print(table)
+    if simple:
+        if not classes_now:
+            print("")
+        else:
+            print(classes_now[0].end_time())
     else:
-        print("No classes are currently in session")
+        if classes_now:
+            print("Times for classes currently in session")
+            table = tabulate.tabulate(
+                table_data,
+                headers=table_headers,
+                tablefmt=format
+            )
+            print(table)
+        else:
+            print("No classes are currently in session")
 
 
 if __name__ == '__main__':
