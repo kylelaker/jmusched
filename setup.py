@@ -14,7 +14,7 @@ from setuptools import find_packages, setup, Command
 # Package meta-data.
 NAME = 'jmusched'
 DESCRIPTION = 'JMU class schedule'
-URL = 'https://github.com/kylelaker/bookmarks'
+URL = 'https://github.com/kylelaker/jmusched'
 EMAIL = 'kyle@laker.email'
 AUTHOR = 'Kyle Laker'
 REQUIRES_PYTHON = '>=3.6.0'
